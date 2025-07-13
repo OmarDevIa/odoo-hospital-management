@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: hospital_management
+      POSTGRES_USER: odoo_user
+      POSTGRES_PASSWORD: Oam,&&1809
+    volumes:
+      - odoo-db:/var/lib/postgresql/data
+
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=db
+      - USER=odoo_user
+      - PASSWORD=Oam,&&1809
+    volumes:
+      - ./odoo:/mnt/odoo
+      - ./enterprise:/mnt/enterprise
+      - ./custom:/mnt/custom
+
+volumes:
+  odoo-db:

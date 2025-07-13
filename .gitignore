@@ -1,0 +1,16 @@
+echo "__pycache__/
+*.pyc
+*.pyo
+*.swp
+.env
+*.log
+addons/*/node_modules/
+enterprise/*/node_modules/
+.vscode/
+.idea/
+*.egg-info/
+.odoo
+*.db
+*.zip
+*.tar.gz
+" > .gitignore

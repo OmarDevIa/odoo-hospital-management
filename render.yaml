@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: odoo-web
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: POSTGRES_DB
+        value: hospital_management_ysvd
+      - key: POSTGRES_USER
+        value: odoo_user
+      - key: POSTGRES_PASSWORD
+        value: drEi4xCnd5io9QjDv0SFDPLCqM5V5HeR
+      - key: PGHOST
+        value: dpg-d1pvh9c9c44c7392ov3g-a
+      - key: PGPORT
+        value: 5432
