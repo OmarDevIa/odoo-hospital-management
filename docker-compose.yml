@@ -15,6 +15,9 @@ services:
     build: .
     depends_on:
       - db
+      command: >
+      odoo -d hospital_management_ysvd -i base --without-demo=all --log-level=info --save
+
     ports:
       - "8069:8069"
     environment:
@@ -25,6 +28,7 @@ services:
       - ./odoo:/mnt/odoo
       - ./enterprise:/mnt/enterprise
       - ./custom:/mnt/custom
+      - ./odoo.conf:/etc/odoo/odoo.conf:rw
 
 volumes:
   odoo-db:
