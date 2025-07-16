@@ -13,5 +13,9 @@ COPY ./odoo.conf /etc/odoo/odoo.conf
 COPY ./odoo /mnt/odoo
 COPY ./enterprise /mnt/enterprise
 COPY ./custom /mnt/custom
+# Définir les permissions
+RUN chown -R odoo:odoo /mnt/odoo /mnt/enterprise /mnt/custom /etc/odoo
+
+
 
 USER odoo
